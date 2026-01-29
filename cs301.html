@@ -239,6 +239,19 @@
         const timestamp = new Date().toLocaleString();
         document.getElementById('watermark').textContent = `${currentUser} | ${timestamp}`;
 
+        // Update all navigation links to preserve user parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            if (userParam) {
+                const links = document.querySelectorAll('a[href$=".html"]');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.includes('?')) {
+                        link.setAttribute('href', `${href}?user=${userParam}`);
+                    }
+                });
+            }
+        });
+
         // Export to CSV function
         function exportToCSV() {
             const courseCode = 'CS 301';
