@@ -51,24 +51,7 @@
             <a href="cs401.html">CS 401</a>
         </div>
     </div>
-    <script>
-        // Preserve user parameter in navigation - runs immediately
-        (function() {
-            const user = new URLSearchParams(window.location.search).get('user');
-            if (user) {
-                document.querySelectorAll('.nav-links a, .breadcrumb a, .course-card').forEach(link => {
-                    // Get current href (might be relative or absolute)
-                    let href = link.href; // Use .href property for full URL
-                    
-                    // Skip if already has params or is anchor
-                    if (href && !href.includes('?') && !href.includes('#')) {
-                        // Add user parameter
-                        link.href = href + '?user=' + user;
-                    }
-                });
-            }
-        })();
-    </script>
+    
     
     <div class="container">
         <div class="content">
@@ -137,17 +120,21 @@
     <div class="watermark" id="watermark"></div>
 
     <script>
-        // Get user from URL parameter (?user=jake or ?user=chen)
-        const urlParams = new URLSearchParams(window.location.search);
-        const userParam = urlParams.get('user') || 'chen';
+        // Get user from URL parameter or sessionStorage
+        const params = new URLSearchParams(window.location.search);
+        const userValue = params.get('user') || sessionStorage.getItem('cbguser') || 'chen';
+        
+        // Save to sessionStorage if provided
+        }
+        
+        // Get from sessionStorage (fallback to chen)
         
         let currentUser, fullName;
         
-        if (userParam === 'jake') {
+        if (userValue === 'jake') {
             currentUser = 'Jake Martinez';
             fullName = 'Jake Martinez';
         } else {
-            // Default to Dr. Chen
             currentUser = 'Dr. S. Chen';
             fullName = 'Dr. Sarah Chen';
         }
@@ -157,5 +144,41 @@
         const timestamp = new Date().toLocaleString();
         document.getElementById('watermark').textContent = `${currentUser} | ${timestamp}`;
     </script>
+<script>
+// Universal link fixer - NO URL parameters, pure sessionStorage
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const userParam = params.get('user');
+    
+    // Save to sessionStorage if URL has user parameter
+    if (userParam) {
+        sessionStorage.setItem('cbguser', userParam);
+    }
+    
+    // Get current user from sessionStorage only
+    const user = sessionStorage.getItem('cbguser') || 'chen';
+    
+    // Update ALL links to have NO user parameter (clean URLs)
+    function fixLinks() {
+        document.querySelectorAll('a').forEach(link => {
+            if (!link.href) return;
+            try {
+                const url = new URL(link.href);
+                // Remove user parameter from all links
+                if (url.origin === window.location.origin) {
+                    url.searchParams.delete('user');
+                    link.href = url.toString();
+                }
+            } catch(e) {}
+        });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixLinks);
+    } else {
+        fixLinks();
+    }
+})();
+</script>
 </body>
 </html>

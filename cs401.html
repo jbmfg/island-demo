@@ -51,20 +51,7 @@
             <a href="cs401.html" class="active">CS 401</a>
         </div>
     </div>
-    <script>
-        // Preserve user parameter in navigation - runs immediately
-        (function() {
-            const user = new URLSearchParams(window.location.search).get('user');
-            if (user) {
-                document.querySelectorAll('.nav-links a, .breadcrumb a').forEach(link => {
-                    let href = link.href;
-                    if (href && !href.includes('?') && !href.includes('#')) {
-                        link.href = href + '?user=' + user;
-                    }
-                });
-            }
-        })();
-    </script>
+    
     
     <div class="container">
         <div class="content">
@@ -261,15 +248,16 @@
 
     <script>
         // Get user from URL parameter (?user=jake or ?user=chen)
-        const urlParams = new URLSearchParams(window.location.search);
-        const userParam = urlParams.get('user');
+        const params = new URLSearchParams(window.location.search);
+        const userValue = params.get('user') || sessionStorage.getItem('cbguser') || 'chen';
+        
+        }
         
         let currentUser;
         
-        if (userParam === 'jake') {
+        if (userValue === 'jake') {
             currentUser = 'Jake Martinez';
         } else {
-            // Default to Dr. Chen
             currentUser = 'Dr. S. Chen';
         }
         
@@ -311,5 +299,41 @@
             window.URL.revokeObjectURL(url);
         }
     </script>
+<script>
+// Universal link fixer - NO URL parameters, pure sessionStorage
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const userParam = params.get('user');
+    
+    // Save to sessionStorage if URL has user parameter
+    if (userParam) {
+        sessionStorage.setItem('cbguser', userParam);
+    }
+    
+    // Get current user from sessionStorage only
+    const user = sessionStorage.getItem('cbguser') || 'chen';
+    
+    // Update ALL links to have NO user parameter (clean URLs)
+    function fixLinks() {
+        document.querySelectorAll('a').forEach(link => {
+            if (!link.href) return;
+            try {
+                const url = new URL(link.href);
+                // Remove user parameter from all links
+                if (url.origin === window.location.origin) {
+                    url.searchParams.delete('user');
+                    link.href = url.toString();
+                }
+            } catch(e) {}
+        });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixLinks);
+    } else {
+        fixLinks();
+    }
+})();
+</script>
 </body>
 </html>
