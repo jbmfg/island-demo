@@ -120,14 +120,17 @@
     <div class="watermark" id="watermark"></div>
 
     <script>
-        // Get user from URL parameter or sessionStorage
+        // Get user from sessionStorage (set by initial ?user= param)
         const params = new URLSearchParams(window.location.search);
-        const userValue = params.get('user') || sessionStorage.getItem('cbguser') || 'chen';
+        const userParam = params.get('user');
         
-        // Save to sessionStorage if provided
+        // Save to sessionStorage if URL has parameter
+        if (userParam) {
+            sessionStorage.setItem('cbguser', userParam);
         }
         
         // Get from sessionStorage (fallback to chen)
+        const userValue = sessionStorage.getItem('cbguser') || 'chen';
         
         let currentUser, fullName;
         

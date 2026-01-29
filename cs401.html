@@ -249,10 +249,13 @@
     <script>
         // Get user from URL parameter (?user=jake or ?user=chen)
         const params = new URLSearchParams(window.location.search);
-        const userValue = params.get('user') || sessionStorage.getItem('cbguser') || 'chen';
+        const userParam = params.get('user');
         
+        if (userParam) {
+            sessionStorage.setItem('cbguser', userParam);
         }
         
+        const userValue = sessionStorage.getItem('cbguser') || 'chen';
         let currentUser;
         
         if (userValue === 'jake') {
