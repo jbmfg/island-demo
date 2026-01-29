@@ -1,0 +1,24 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradPortal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#003b5c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#005f8c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield with book (smaller) -->
+  <path d="M40 3 L65 11 L65 28 Q65 43 40 58 Q15 43 15 28 L15 11 Z" fill="url(#gradPortal)" stroke="#ffa500" stroke-width="1.5"/>
+  
+  <!-- Book -->
+  <rect x="32" y="22" width="16" height="14" fill="white" opacity="0.9"/>
+  <line x1="40" y1="22" x2="40" y2="36" stroke="#003b5c" stroke-width="1.5"/>
+  <line x1="32" y1="27" x2="48" y2="27" stroke="#003b5c" stroke-width="0.8"/>
+  <line x1="32" y1="31" x2="48" y2="31" stroke="#003b5c" stroke-width="0.8"/>
+  
+  <!-- CBG text in shield -->
+  <text x="40" y="48" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">CBG</text>
+  
+  <!-- Portal text underneath -->
+  <text x="40" y="68" font-family="Arial, sans-serif" font-size="8" font-weight="600" fill="#003b5c" text-anchor="middle">FACULTY GRADE</text>
+  <text x="40" y="76" font-family="Arial, sans-serif" font-size="8" font-weight="600" fill="#003b5c" text-anchor="middle">PORTAL</text>
+</svg>
