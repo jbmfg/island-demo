@@ -1,0 +1,31 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="40" cy="40" r="38" fill="#003b5c" stroke="#c5a572" stroke-width="2"/>
+  
+  <!-- MQTT signal waves -->
+  <g stroke="#c5a572" stroke-width="2.5" fill="none">
+    <!-- Left wave -->
+    <path d="M 15 40 Q 20 30, 25 40 Q 30 50, 35 40" stroke-linecap="round"/>
+    <!-- Center wave -->
+    <path d="M 30 35 Q 35 25, 40 35 Q 45 45, 50 35" stroke-linecap="round"/>
+    <!-- Right wave -->
+    <path d="M 45 40 Q 50 30, 55 40 Q 60 50, 65 40" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Server/chip icon -->
+  <rect x="32" y="48" width="16" height="18" rx="1" fill="#c5a572"/>
+  <rect x="34" y="50" width="12" height="3" fill="#003b5c"/>
+  <rect x="34" y="55" width="12" height="3" fill="#003b5c"/>
+  <rect x="34" y="60" width="12" height="3" fill="#003b5c"/>
+  
+  <!-- Small circles for connection points -->
+  <circle cx="30" cy="50" r="1.5" fill="#c5a572"/>
+  <circle cx="30" cy="57" r="1.5" fill="#c5a572"/>
+  <circle cx="30" cy="64" r="1.5" fill="#c5a572"/>
+  <circle cx="50" cy="50" r="1.5" fill="#c5a572"/>
+  <circle cx="50" cy="57" r="1.5" fill="#c5a572"/>
+  <circle cx="50" cy="64" r="1.5" fill="#c5a572"/>
+  
+  <!-- CBG text at bottom -->
+  <text x="40" y="74" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#c5a572">CBG</text>
+</svg>
