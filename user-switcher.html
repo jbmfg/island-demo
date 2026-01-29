@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBG University - User Switcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #003b5c 0%, #005f8c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #003b5c;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .user-cards {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .user-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #003b5c;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .user-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,59,92,0.2);
+            border-left-color: #ffa500;
+        }
+        
+        .user-card h2 {
+            color: #003b5c;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        
+        .user-card .role {
+            color: #005f8c;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .user-card .access {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .info-box {
+            background: #e6f2f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #005f8c;
+            margin-top: 30px;
+        }
+        
+        .info-box h3 {
+            color: #003b5c;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+        }
+        
+        .info-box li {
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .direct-links {
+            margin-top: 20px;
+        }
+        
+        .direct-links h4 {
+            color: #003b5c;
+            margin-bottom: 10px;
+        }
+        
+        .direct-links a {
+            display: inline-block;
+            background: #003b5c;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background 0.3s;
+        }
+        
+        .direct-links a:hover {
+            background: #005f8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CBG University Demo</h1>
+        <p class="subtitle">Select a user to view the portal as:</p>
+        
+        <div class="user-cards">
+            <a href="index.html?user=chen" class="user-card">
+                <h2>👩‍🏫 Dr. Sarah Chen</h2>
+                <div class="role">Faculty - Professor</div>
+                <div class="access">✅ Full access to all courses (CS 201, CS 301, CS 401)</div>
+            </a>
+            
+            <a href="index.html?user=jake" class="user-card">
+                <h2>👨‍🎓 Jake Martinez</h2>
+                <div class="role">Teaching Assistant</div>
+                <div class="access">✅ Access to CS 401 only (limited by Island policy)</div>
+            </a>
+        </div>
+        
+        <div class="info-box">
+            <h3>🎯 Demo Instructions</h3>
+            <ul>
+                <li>Click a user card above to start</li>
+                <li>The watermark in the bottom-right shows current user</li>
+                <li>Navigate between courses using the top menu</li>
+                <li>Try accessing different courses as Jake to see Island blocking</li>
+            </ul>
+            
+            <div class="direct-links">
+                <h4>Direct Links:</h4>
+                <strong>Dr. Chen:</strong>
+                <a href="index.html?user=chen">Dashboard</a>
+                <a href="cs201.html?user=chen">CS 201</a>
+                <a href="cs301.html?user=chen">CS 301</a>
+                <a href="cs401.html?user=chen">CS 401</a>
+                <br><br>
+                <strong>Jake Martinez:</strong>
+                <a href="index.html?user=jake">Dashboard</a>
+                <a href="cs401.html?user=jake">CS 401</a>
+                <a href="cs201.html?user=jake">CS 201 (Should Block)</a>
+                <a href="cs301.html?user=jake">CS 301 (Should Block)</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

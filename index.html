@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Portal - CBG University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div>🔒 Secure Faculty Portal • IT Support: portal@cbgu.edu | 📞 (555) 123-4567</div>
+            <div class="top-bar-links">
+                <a href="#">Help Desk</a>
+                <a href="#">FERPA Guidelines</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="logo">
+            <svg width="100" height="36" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1h" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#003b5c;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#005f8c;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M50 10 L85 22 L85 45 Q85 70 50 90 Q15 70 15 45 L15 22 Z" fill="url(#grad1h)" stroke="#ffa500" stroke-width="2"/>
+                <rect x="37" y="35" width="26" height="22" fill="white" opacity="0.9"/>
+                <line x1="50" y1="35" x2="50" y2="57" stroke="#003b5c" stroke-width="2"/>
+                <line x1="37" y1="42" x2="63" y2="42" stroke="#003b5c" stroke-width="1"/>
+                <line x1="37" y1="47" x2="63" y2="47" stroke="#003b5c" stroke-width="1"/>
+                <text x="110" y="45" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#003b5c">CBG</text>
+                <text x="110" y="65" font-family="Georgia, serif" font-size="16" fill="#005f8c">UNIVERSITY</text>
+                <line x1="110" y1="70" x2="260" y2="70" stroke="#ffa500" stroke-width="2"/>
+            </svg>
+            <div class="logo-text" style="margin-left: 20px;">
+                <h1>Faculty Grade Portal</h1>
+                <div class="tagline">Secure Access • FERPA Compliant</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nav">
+        <div class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="cs201.html">CS 201</a>
+            <a href="cs301.html">CS 301</a>
+            <a href="cs401.html">CS 401</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / Dashboard
+            </div>
+
+            <div class="welcome-section">
+                <h2>Welcome back, <span id="username">Dr. Sarah Chen</span></h2>
+                <p>Computer Science Department • Spring 2025 Semester</p>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-label">Total Courses</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Students</div>
+                    <div class="stat-value">111</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg. Grade</div>
+                    <div class="stat-value">B+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Semester</div>
+                    <div class="stat-value">Spring '25</div>
+                </div>
+            </div>
+            
+            <h3 class="section-title">Your Courses</h3>
+            <div style="display: grid; gap: 20px;">
+                <a href="cs201.html" class="course-card">
+                    <div class="stat-card">
+                        <div class="course-card-code">CS 201</div>
+                        <div class="course-card-title">Introduction to Programming</div>
+                        <div class="course-card-meta">📚 45 students • 📊 Average: B+ • 🕐 MWF 10:00-11:15 AM</div>
+                    </div>
+                </a>
+                
+                <a href="cs301.html" class="course-card">
+                    <div class="stat-card">
+                        <div class="course-card-code">CS 301</div>
+                        <div class="course-card-title">Data Structures & Algorithms</div>
+                        <div class="course-card-meta">📚 38 students • 📊 Average: B • 🕐 TTh 2:00-3:30 PM</div>
+                    </div>
+                </a>
+                
+                <a href="cs401.html" class="course-card">
+                    <div class="stat-card">
+                        <div class="course-card-code">CS 401</div>
+                        <div class="course-card-title">IoT Security</div>
+                        <div class="course-card-meta">📚 28 students • 📊 Average: A- • 👨‍🎓 TA: Jake Martinez • 🕐 MW 3:00-4:30 PM</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CBG University Faculty Grade Portal. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">FERPA Compliance</a> | <a href="#">Acceptable Use Policy</a></p>
+        <p style="font-size: 12px; margin-top: 8px; opacity: 0.8;">This system is for authorized faculty and staff only. Unauthorized access is prohibited.</p>
+    </footer>
+    
+    <div class="watermark" id="watermark"></div>
+
+    <script>
+        // Get user from URL parameter (?user=jake or ?user=chen)
+        const urlParams = new URLSearchParams(window.location.search);
+        const userParam = urlParams.get('user');
+        
+        let currentUser, fullName;
+        
+        if (userParam === 'jake') {
+            currentUser = 'Jake Martinez';
+            fullName = 'Jake Martinez';
+        } else {
+            // Default to Dr. Chen
+            currentUser = 'Dr. S. Chen';
+            fullName = 'Dr. Sarah Chen';
+        }
+        
+        document.getElementById('username').textContent = fullName;
+        
+        const timestamp = new Date().toLocaleString();
+        document.getElementById('watermark').textContent = `${currentUser} | ${timestamp}`;
+    </script>
+</body>
+</html>
