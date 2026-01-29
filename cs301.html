@@ -106,7 +106,8 @@
                         <th>Project</th>
                         <th>Midterm</th>
                         <th>Final</th>
-                        <th>Overall</th>
+                        <th>Average</th>
+                        <th>Grade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -115,9 +116,10 @@
                         <td>Isabella Garcia</td>
                         <td class="grade-b">87</td>
                         <td class="grade-a">91</td>
-                        <td class="grade-a">A-</td>
-                        <td class="grade-b">B+</td>
-                        <td class="grade-a">A-</td>
+                        <td class="grade-a">92</td>
+                        <td class="grade-b">88</td>
+                        <td class="grade-a">90</td>
+                        <td class="grade-a">89.6</td>
                         <td class="grade-a">A-</td>
                     </tr>
                     <tr>
@@ -125,9 +127,10 @@
                         <td>James Anderson</td>
                         <td class="grade-b">83</td>
                         <td class="grade-b">86</td>
-                        <td class="grade-b">B+</td>
-                        <td class="grade-b">B</td>
-                        <td class="grade-b">B+</td>
+                        <td class="grade-b">87</td>
+                        <td class="grade-b">84</td>
+                        <td class="grade-b">86</td>
+                        <td class="grade-b">85.2</td>
                         <td class="grade-b">B+</td>
                     </tr>
                     <tr>
@@ -135,9 +138,10 @@
                         <td>Mia Wilson</td>
                         <td class="grade-a">96</td>
                         <td class="grade-a">98</td>
-                        <td class="grade-a">A</td>
-                        <td class="grade-a">A</td>
-                        <td class="grade-a">A</td>
+                        <td class="grade-a">95</td>
+                        <td class="grade-a">94</td>
+                        <td class="grade-a">96</td>
+                        <td class="grade-a">95.8</td>
                         <td class="grade-a">A</td>
                     </tr>
                     <tr>
@@ -145,19 +149,21 @@
                         <td>Lucas Brown</td>
                         <td class="grade-c">72</td>
                         <td class="grade-c">76</td>
-                        <td class="grade-c">C+</td>
+                        <td class="grade-c">78</td>
+                        <td class="grade-c">74</td>
+                        <td class="grade-c">79</td>
+                        <td class="grade-c">75.8</td>
                         <td class="grade-c">C</td>
-                        <td class="grade-b">B-</td>
-                        <td class="grade-c">C+</td>
                     </tr>
                     <tr>
                         <td>2005</td>
                         <td>Charlotte Taylor</td>
                         <td class="grade-b">89</td>
                         <td class="grade-b">88</td>
-                        <td class="grade-b">B+</td>
-                        <td class="grade-b">B+</td>
-                        <td class="grade-b">B+</td>
+                        <td class="grade-b">87</td>
+                        <td class="grade-b">88</td>
+                        <td class="grade-b">89</td>
+                        <td class="grade-b">88.2</td>
                         <td class="grade-b">B+</td>
                     </tr>
                     <tr>
@@ -165,19 +171,21 @@
                         <td>Benjamin Lee</td>
                         <td class="grade-a">92</td>
                         <td class="grade-a">90</td>
-                        <td class="grade-b">B+</td>
+                        <td class="grade-b">86</td>
+                        <td class="grade-a">91</td>
+                        <td class="grade-b">88</td>
+                        <td class="grade-a">89.4</td>
                         <td class="grade-a">A-</td>
-                        <td class="grade-b">B+</td>
-                        <td class="grade-b">B+</td>
                     </tr>
                     <tr>
                         <td>2007</td>
                         <td>Amelia White</td>
                         <td class="grade-b">79</td>
                         <td class="grade-b">81</td>
-                        <td class="grade-b">B-</td>
-                        <td class="grade-b">B-</td>
-                        <td class="grade-b">B</td>
+                        <td class="grade-b">80</td>
+                        <td class="grade-b">79</td>
+                        <td class="grade-b">82</td>
+                        <td class="grade-b">80.2</td>
                         <td class="grade-b">B-</td>
                     </tr>
                     <tr>
@@ -185,9 +193,10 @@
                         <td>Henry Harris</td>
                         <td class="grade-b">84</td>
                         <td class="grade-b">82</td>
-                        <td class="grade-b">B</td>
-                        <td class="grade-b">B</td>
-                        <td class="grade-b">B</td>
+                        <td class="grade-b">83</td>
+                        <td class="grade-b">84</td>
+                        <td class="grade-b">83</td>
+                        <td class="grade-b">83.2</td>
                         <td class="grade-b">B</td>
                     </tr>
                     <tr>
@@ -195,9 +204,10 @@
                         <td>Ella Martin</td>
                         <td class="grade-a">94</td>
                         <td class="grade-a">95</td>
-                        <td class="grade-a">A</td>
-                        <td class="grade-a">A-</td>
-                        <td class="grade-a">A</td>
+                        <td class="grade-a">93</td>
+                        <td class="grade-a">92</td>
+                        <td class="grade-a">94</td>
+                        <td class="grade-a">93.6</td>
                         <td class="grade-a">A</td>
                     </tr>
                 </tbody>
@@ -236,21 +246,20 @@
             
             // Define the data
             const data = [
-                ['Student ID', 'Name', 'Quiz 1', 'Quiz 2', 'Project', 'Midterm Exam', 'Final Exam', 'Overall Grade'],
-                ['2001', 'Isabella Garcia', '87', '91', 'A-', 'B+', 'A-', 'A-'],
-                ['2002', 'James Anderson', '83', '86', 'B+', 'B', 'B+', 'B+'],
-                ['2003', 'Mia Wilson', '96', '98', 'A', 'A', 'A', 'A'],
-                ['2004', 'Lucas Brown', '72', '76', 'C+', 'C', 'B-', 'C+'],
-                ['2005', 'Charlotte Taylor', '89', '88', 'B+', 'B+', 'B+', 'B+'],
-                ['2006', 'Benjamin Lee', '92', '90', 'B+', 'A-', 'B+', 'B+'],
-                ['2007', 'Amelia White', '79', '81', 'B-', 'B-', 'B', 'B-'],
-                ['2008', 'Henry Harris', '84', '82', 'B', 'B', 'B', 'B'],
-                ['2009', 'Ella Martin', '94', '95', 'A', 'A-', 'A', 'A']
+                ['Student ID', 'Name', 'Quiz 1', 'Quiz 2', 'Project', 'Midterm', 'Final', 'Average', 'Grade'],
+                ['2001', 'Isabella Garcia', '87', '91', '92', '88', '90', '89.6', 'A-'],
+                ['2002', 'James Anderson', '83', '86', '87', '84', '86', '85.2', 'B+'],
+                ['2003', 'Mia Wilson', '96', '98', '95', '94', '96', '95.8', 'A'],
+                ['2004', 'Lucas Brown', '72', '76', '78', '74', '79', '75.8', 'C'],
+                ['2005', 'Charlotte Taylor', '89', '88', '87', '88', '89', '88.2', 'B+'],
+                ['2006', 'Benjamin Lee', '92', '90', '86', '91', '88', '89.4', 'A-'],
+                ['2007', 'Amelia White', '79', '81', '80', '79', '82', '80.2', 'B-'],
+                ['2008', 'Henry Harris', '84', '82', '83', '84', '83', '83.2', 'B'],
+                ['2009', 'Ella Martin', '94', '95', '93', '92', '94', '93.6', 'A']
             ];
             
             // Convert to CSV
-            let csv = `${courseCode} - ${courseName}\nExported by: ${currentUser}\nDate: ${timestamp}\n\n`;
-            csv += data.map(row => row.join(',')).join('\n');
+            let csv = data.map(row => row.join(',')).join('\n');
             
             // Create download
             const blob = new Blob([csv], { type: 'text/csv' });
