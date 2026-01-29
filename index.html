@@ -57,8 +57,12 @@
             const user = new URLSearchParams(window.location.search).get('user');
             if (user) {
                 document.querySelectorAll('.nav-links a, .breadcrumb a, .course-card').forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href && !href.includes('?') && !href.startsWith('#')) {
+                    // Get current href (might be relative or absolute)
+                    let href = link.href; // Use .href property for full URL
+                    
+                    // Skip if already has params or is anchor
+                    if (href && !href.includes('?') && !href.includes('#')) {
+                        // Add user parameter
                         link.href = href + '?user=' + user;
                     }
                 });
