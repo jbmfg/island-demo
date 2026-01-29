@@ -101,15 +101,23 @@
                     <tr>
                         <th>Student ID</th>
                         <th>Name</th>
-                        <th>Midterm Exam</th>
-                        <th>Final Exam</th>
-                        <th>Overall Grade</th>
+                        <th>Quiz 1</th>
+                        <th>Quiz 2</th>
+                        <th>Quiz 3</th>
+                        <th>Paper</th>
+                        <th>Midterm</th>
+                        <th>Final</th>
+                        <th>Overall</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1001</td>
                         <td>Emma Thompson</td>
+                        <td class="grade-a">95</td>
+                        <td class="grade-a">92</td>
+                        <td class="grade-a">97</td>
+                        <td class="grade-a">A</td>
                         <td class="grade-a">A</td>
                         <td class="grade-a">A-</td>
                         <td class="grade-a">A</td>
@@ -117,6 +125,10 @@
                     <tr>
                         <td>1002</td>
                         <td>Liam Martinez</td>
+                        <td class="grade-b">88</td>
+                        <td class="grade-b">85</td>
+                        <td class="grade-a">91</td>
+                        <td class="grade-b">B+</td>
                         <td class="grade-b">B+</td>
                         <td class="grade-a">A</td>
                         <td class="grade-a">A-</td>
@@ -124,6 +136,10 @@
                     <tr>
                         <td>1003</td>
                         <td>Olivia Chen</td>
+                        <td class="grade-a">93</td>
+                        <td class="grade-a">90</td>
+                        <td class="grade-b">87</td>
+                        <td class="grade-a">A-</td>
                         <td class="grade-a">A-</td>
                         <td class="grade-b">B+</td>
                         <td class="grade-a">A-</td>
@@ -131,6 +147,10 @@
                     <tr>
                         <td>1004</td>
                         <td>Noah Patel</td>
+                        <td class="grade-b">82</td>
+                        <td class="grade-b">85</td>
+                        <td class="grade-b">84</td>
+                        <td class="grade-b">B</td>
                         <td class="grade-b">B</td>
                         <td class="grade-b">B+</td>
                         <td class="grade-b">B+</td>
@@ -138,6 +158,10 @@
                     <tr>
                         <td>1005</td>
                         <td>Ava Johnson</td>
+                        <td class="grade-a">98</td>
+                        <td class="grade-a">96</td>
+                        <td class="grade-a">99</td>
+                        <td class="grade-a">A</td>
                         <td class="grade-a">A</td>
                         <td class="grade-a">A</td>
                         <td class="grade-a">A</td>
@@ -145,6 +169,10 @@
                     <tr>
                         <td>1006</td>
                         <td>Ethan Williams</td>
+                        <td class="grade-c">75</td>
+                        <td class="grade-c">78</td>
+                        <td class="grade-b">82</td>
+                        <td class="grade-c">C+</td>
                         <td class="grade-c">C+</td>
                         <td class="grade-b">B</td>
                         <td class="grade-b">B-</td>
@@ -152,6 +180,10 @@
                     <tr>
                         <td>1007</td>
                         <td>Sophia Davis</td>
+                        <td class="grade-b">80</td>
+                        <td class="grade-b">83</td>
+                        <td class="grade-b">81</td>
+                        <td class="grade-b">B-</td>
                         <td class="grade-b">B-</td>
                         <td class="grade-b">B</td>
                         <td class="grade-b">B</td>
@@ -159,6 +191,10 @@
                     <tr>
                         <td>1008</td>
                         <td>Mason Rodriguez</td>
+                        <td class="grade-a">91</td>
+                        <td class="grade-a">94</td>
+                        <td class="grade-a">92</td>
+                        <td class="grade-a">A</td>
                         <td class="grade-a">A-</td>
                         <td class="grade-a">A</td>
                         <td class="grade-a">A</td>
@@ -166,6 +202,10 @@
                     <tr>
                         <td>1009</td>
                         <td>Charlotte Miller</td>
+                        <td class="grade-b">86</td>
+                        <td class="grade-b">88</td>
+                        <td class="grade-b">89</td>
+                        <td class="grade-b">B+</td>
                         <td class="grade-b">B+</td>
                         <td class="grade-b">B+</td>
                         <td class="grade-b">B+</td>
@@ -173,6 +213,10 @@
                     <tr>
                         <td>1010</td>
                         <td>Jacob Moore</td>
+                        <td class="grade-b">84</td>
+                        <td class="grade-b">87</td>
+                        <td class="grade-a">90</td>
+                        <td class="grade-b">B+</td>
                         <td class="grade-b">B</td>
                         <td class="grade-a">A-</td>
                         <td class="grade-b">B+</td>
@@ -213,17 +257,17 @@
             
             // Define the data
             const data = [
-                ['Student ID', 'Name', 'Midterm Exam', 'Final Exam', 'Overall Grade'],
-                ['1001', 'Emma Thompson', 'A', 'A-', 'A'],
-                ['1002', 'Liam Martinez', 'B+', 'A', 'A-'],
-                ['1003', 'Olivia Chen', 'A-', 'B+', 'A-'],
-                ['1004', 'Noah Patel', 'B', 'B+', 'B+'],
-                ['1005', 'Ava Johnson', 'A', 'A', 'A'],
-                ['1006', 'Ethan Williams', 'C+', 'B', 'B-'],
-                ['1007', 'Sophia Davis', 'B-', 'B', 'B'],
-                ['1008', 'Mason Rodriguez', 'A-', 'A', 'A'],
-                ['1009', 'Charlotte Miller', 'B+', 'B+', 'B+'],
-                ['1010', 'Jacob Moore', 'B', 'A-', 'B+']
+                ['Student ID', 'Name', 'Quiz 1', 'Quiz 2', 'Quiz 3', 'Paper', 'Midterm Exam', 'Final Exam', 'Overall Grade'],
+                ['1001', 'Emma Thompson', '95', '92', '97', 'A', 'A', 'A-', 'A'],
+                ['1002', 'Liam Martinez', '88', '85', '91', 'B+', 'B+', 'A', 'A-'],
+                ['1003', 'Olivia Chen', '93', '90', '87', 'A-', 'A-', 'B+', 'A-'],
+                ['1004', 'Noah Patel', '82', '85', '84', 'B', 'B', 'B+', 'B+'],
+                ['1005', 'Ava Johnson', '98', '96', '99', 'A', 'A', 'A', 'A'],
+                ['1006', 'Ethan Williams', '75', '78', '82', 'C+', 'C+', 'B', 'B-'],
+                ['1007', 'Sophia Davis', '80', '83', '81', 'B-', 'B-', 'B', 'B'],
+                ['1008', 'Mason Rodriguez', '91', '94', '92', 'A', 'A-', 'A', 'A'],
+                ['1009', 'Charlotte Miller', '86', '88', '89', 'B+', 'B+', 'B+', 'B+'],
+                ['1010', 'Jacob Moore', '84', '87', '90', 'B+', 'B', 'A-', 'B+']
             ];
             
             // Convert to CSV
