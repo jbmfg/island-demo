@@ -90,6 +90,12 @@
             </div>
             
             <h3 class="section-title">Student Grades</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div style="color: #666; font-size: 14px;">Showing 9 of 38 students</div>
+                <button onclick="exportToCSV()" style="background: #003b5c; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 14px; transition: background 0.3s;">
+                    📥 Export to CSV
+                </button>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -192,6 +198,41 @@
         
         const timestamp = new Date().toLocaleString();
         document.getElementById('watermark').textContent = `${currentUser} | ${timestamp}`;
+
+        // Export to CSV function
+        function exportToCSV() {
+            const courseCode = 'CS 301';
+            const courseName = 'Data Structures & Algorithms';
+            
+            // Define the data
+            const data = [
+                ['Student ID', 'Name', 'Midterm Exam', 'Final Exam', 'Overall Grade'],
+                ['2001', 'Isabella Garcia', 'B+', 'A-', 'A-'],
+                ['2002', 'James Anderson', 'B', 'B+', 'B+'],
+                ['2003', 'Mia Wilson', 'A', 'A', 'A'],
+                ['2004', 'Lucas Brown', 'C', 'B-', 'C+'],
+                ['2005', 'Charlotte Taylor', 'B+', 'B+', 'B+'],
+                ['2006', 'Benjamin Lee', 'A-', 'B+', 'B+'],
+                ['2007', 'Amelia White', 'B-', 'B', 'B-'],
+                ['2008', 'Henry Harris', 'B', 'B', 'B'],
+                ['2009', 'Ella Martin', 'A-', 'A', 'A']
+            ];
+            
+            // Convert to CSV
+            let csv = `${courseCode} - ${courseName}\nExported by: ${currentUser}\nDate: ${timestamp}\n\n`;
+            csv += data.map(row => row.join(',')).join('\n');
+            
+            // Create download
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `CS301_Grades_${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
     </script>
 </body>
 </html>
