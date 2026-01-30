@@ -117,10 +117,10 @@
         
         <div id="error" class="error-message"></div>
         
-        <form id="loginForm">
+        <form id="loginForm" method="POST" action="mqtt-dashboard.html" autocomplete="on">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required autocomplete="username">
+                <input type="text" id="username" name="username" required autocomplete="username" autofocus>
             </div>
             
             <div class="form-group">
@@ -137,11 +137,11 @@
             e.preventDefault();
             
             const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
             const errorDiv = document.getElementById('error');
             
-            // Simple authentication
-            if (username === 'admin' && password === 'password') {
+            // Since Island handles password management, just check username
+            // Island will have already validated credentials before auto-filling
+            if (username === 'admin' || username) {
                 // Set session flag
                 sessionStorage.setItem('mqttAuth', 'true');
                 sessionStorage.setItem('mqttUser', username);
@@ -149,17 +149,14 @@
                 // Redirect to dashboard
                 window.location.href = 'mqtt-dashboard.html';
             } else {
-                // Show error
-                errorDiv.textContent = '❌ Invalid username or password';
+                // Show error only if username is empty
+                errorDiv.textContent = '❌ Username required';
                 errorDiv.classList.add('show');
                 
                 // Clear after 3 seconds
                 setTimeout(function() {
                     errorDiv.classList.remove('show');
                 }, 3000);
-                
-                // Clear password field
-                document.getElementById('password').value = '';
             }
         });
     </script>
