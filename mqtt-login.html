@@ -117,7 +117,7 @@
         
         <div id="error" class="error-message"></div>
         
-        <form id="loginForm" method="POST" action="mqtt-dashboard.html" autocomplete="on">
+        <form id="loginForm" method="POST" action="authenticate.html" target="auth_frame" autocomplete="on">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required autocomplete="username" autofocus>
@@ -130,33 +130,27 @@
             
             <button type="submit">Login</button>
         </form>
+        
+        <!-- Hidden iframe for form submission -->
+        <iframe name="auth_frame" style="display: none;"></iframe>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             const username = document.getElementById('username').value;
-            const errorDiv = document.getElementById('error');
+            const password = document.getElementById('password').value;
             
-            // Since Island handles password management, just check username
-            // Island will have already validated credentials before auto-filling
-            if (username === 'admin' || username) {
+            // Allow form to submit to iframe (for password manager)
+            // But also handle redirect
+            if (username && password) {
                 // Set session flag
                 sessionStorage.setItem('mqttAuth', 'true');
                 sessionStorage.setItem('mqttUser', username);
                 
-                // Redirect to dashboard
-                window.location.href = 'mqtt-dashboard.html';
-            } else {
-                // Show error only if username is empty
-                errorDiv.textContent = '❌ Username required';
-                errorDiv.classList.add('show');
-                
-                // Clear after 3 seconds
+                // Small delay to let password manager save, then redirect
                 setTimeout(function() {
-                    errorDiv.classList.remove('show');
-                }, 3000);
+                    window.location.href = 'mqtt-dashboard.html';
+                }, 100);
             }
         });
     </script>
