@@ -1,0 +1,82 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#003b5c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001f3f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c5a572;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4af6a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c5a572;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Navy blue background -->
+  <rect width="1200" height="1200" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle grid pattern -->
+  <g opacity="0.05">
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="800" x2="1200" y2="800" stroke="white" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="1200" stroke="white" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="1200" stroke="white" stroke-width="1"/>
+  </g>
+  
+  <!-- Campus building silhouettes -->
+  <g opacity="0.3" fill="#c5a572">
+    <!-- Left building -->
+    <rect x="100" y="650" width="200" height="400"/>
+    <rect x="120" y="670" width="40" height="60" fill="#003b5c"/>
+    <rect x="180" y="670" width="40" height="60" fill="#003b5c"/>
+    <rect x="120" y="750" width="40" height="60" fill="#003b5c"/>
+    <rect x="180" y="750" width="40" height="60" fill="#003b5c"/>
+    <polygon points="150,620 200,650 100,650" fill="#c5a572"/>
+    
+    <!-- Center building -->
+    <rect x="500" y="550" width="200" height="500"/>
+    <rect x="520" y="570" width="40" height="60" fill="#003b5c"/>
+    <rect x="580" y="570" width="40" height="60" fill="#003b5c"/>
+    <rect x="640" y="570" width="40" height="60" fill="#003b5c"/>
+    <rect x="520" y="650" width="40" height="60" fill="#003b5c"/>
+    <rect x="580" y="650" width="40" height="60" fill="#003b5c"/>
+    <rect x="640" y="650" width="40" height="60" fill="#003b5c"/>
+    <polygon points="600,520 700,550 500,550" fill="#c5a572"/>
+    
+    <!-- Right building -->
+    <rect x="900" y="700" width="200" height="350"/>
+    <rect x="920" y="720" width="40" height="60" fill="#003b5c"/>
+    <rect x="980" y="720" width="40" height="60" fill="#003b5c"/>
+    <rect x="1040" y="720" width="40" height="60" fill="#003b5c"/>
+    <polygon points="1000,670 1100,700 900,700" fill="#c5a572"/>
+  </g>
+  
+  <!-- Large CBG shield logo in center -->
+  <g transform="translate(600, 400)">
+    <!-- Shield -->
+    <path d="M -120,-150 L -120,0 Q -120,80 0,120 Q 120,80 120,0 L 120,-150 Z" 
+          fill="url(#goldGrad)" stroke="#003b5c" stroke-width="8"/>
+    
+    <!-- Inner shield detail -->
+    <path d="M -100,-130 L -100,0 Q -100,70 0,100 Q 100,70 100,0 L 100,-130 Z" 
+          fill="none" stroke="#003b5c" stroke-width="3"/>
+    
+    <!-- Book symbol -->
+    <rect x="-60" y="-60" width="120" height="80" rx="5" fill="#003b5c"/>
+    <line x1="-60" y1="-20" x2="60" y2="-20" stroke="#c5a572" stroke-width="3"/>
+    <line x1="-60" y1="0" x2="60" y2="0" stroke="#c5a572" stroke-width="3"/>
+    <line x1="0" y1="-60" x2="0" y2="20" stroke="#c5a572" stroke-width="4"/>
+    
+    <!-- CBG text on shield -->
+    <text x="0" y="70" font-family="Georgia, serif" font-size="48" font-weight="bold" 
+          text-anchor="middle" fill="#003b5c">CBG</text>
+  </g>
+  
+  <!-- University name at top -->
+  <text x="600" y="180" font-family="Georgia, serif" font-size="72" font-weight="bold" 
+        text-anchor="middle" fill="url(#goldGrad)" letter-spacing="4">CBG UNIVERSITY</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="230" font-family="Arial, sans-serif" font-size="28" 
+        text-anchor="middle" fill="#c5a572" opacity="0.9">Excellence in Education Since 1892</text>
+</svg>
