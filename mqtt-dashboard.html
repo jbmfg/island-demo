@@ -133,6 +133,11 @@
             background: #d4edda;
             color: #155724;
         }
+        
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+        }
     </style>
 </head>
 <body>
@@ -146,9 +151,9 @@
     
     <div class="container">
         <div class="stats">
-            <div class="stat-box">
+            <div class="stat-box" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);">
                 <div class="label">Server Status</div>
-                <div class="value">🟢</div>
+                <div class="value">🔴</div>
             </div>
             <div class="stat-box">
                 <div class="label">Active Clients</div>
@@ -172,7 +177,7 @@
             </div>
             <div class="info-row">
                 <span class="info-label">Status</span>
-                <span class="info-value"><span class="status-badge status-online">ONLINE</span></span>
+                <span class="info-value"><span class="status-badge status-error">ERROR - Unable to connect to database</span></span>
             </div>
             <div class="info-row">
                 <span class="info-label">Host</span>
